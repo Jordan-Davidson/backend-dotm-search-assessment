@@ -27,9 +27,9 @@ def search_files(text, Dir):
         print('Searching directory' + root + ' for ' + text + '...')
         for _ in files:
             if _.endswith('.dotm'):
-                found += 1
                 dotm_file = read_dotm(root, _)
                 if text in dotm_file:
+                    found += 1
                     index = dotm_file.index(text)
                     print('match found in' + os.path.join(root, _))
                     print('...' + dotm_file[index-40:index+40] + '...')
